@@ -48,7 +48,7 @@ public class Agencia extends JFrame implements ActionListener {
 		//super(new GridLayout(5,0));
 		inicializar();
 		
-		//setVisible(true);
+		setVisible(true);
 	}
 	
 
@@ -71,7 +71,7 @@ public class Agencia extends JFrame implements ActionListener {
 		titulo.setFont(new Font("Comic Sans MS", Font.BOLD + Font.ITALIC, 20));
 		titulo.setForeground(Color.red);
 		
-		//add(titulo);
+		add(titulo);
 		
 		texto = new JLabel("<html><br>" +" ' " + " Ainda que eu falasse as línguas dos homens e dos anjos, " +
 				"e não tivesse Amor, seria como o metal que soa ou como o sino que tine. " +
@@ -96,7 +96,7 @@ public class Agencia extends JFrame implements ActionListener {
 		texto.setBounds(60, 40 ,1020, 250);	
 		texto.setFont(new Font("Vijaya", Font.CENTER_BASELINE, 20));
 		texto.setForeground(Color.BLUE);
-		//add(texto);
+		add(texto);
 
 
 		bt1 = new JButton("Cadastro");
@@ -109,35 +109,23 @@ public class Agencia extends JFrame implements ActionListener {
 		bt2.setBounds(30, 410, 200, 30);
 		bt2.addActionListener(this);
 
-		//add(bt1);
-		//add(bt3);
-		//add(bt2);
+		add(bt1);
+		add(bt3);
+		add(bt2);
 
 		
 		img = new JLabel(new ImageIcon("D:/Documents and Settings/Rafael/Desktop/Imagemlogo.jpeg"));
 		img.setBounds(300, 300, 800, 250);
-		//add(img);
+		add(img);
 
 
 		texto2 = new JLabel("<html>Encontre a tampa da sua panela. O outro par da sua havaina. O ovo da sua marmita. A matade da sua laranja. <center>CADASTRE-SE AGORA!!!</center></html>");
 		texto2.setBounds(30, 450, 1250, 300);
 		texto2.setFont(new Font("Comic Sans MS", Font.CENTER_BASELINE, 18));
 		texto2.setForeground(Color.red);
-		//add(texto2);
+		add(texto2);
 		
-		JPanel panelTitulo = new JPanel();
-        JPanel texto1 = new JPanel();
-        
-        panelTitulo.add(titulo);
-        texto1.add(texto);
-		
-		 JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, 
-	                true, panelTitulo, texto1);
-	        
-	        splitPane.setOneTouchExpandable(true);
-	        getContentPane().add(splitPane);
-	       // this.setVisible(true);
-	        
+			        
 	}
 
 	public void actionPerformed(ActionEvent e) {
