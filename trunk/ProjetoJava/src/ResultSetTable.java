@@ -51,18 +51,22 @@ public class ResultSetTable extends JFrame {
 			con = Conexao.getConnection();
 
 			//monta slq
-			sql ="select nome ,idade ,sexo ,uf ,i.email ,quem_sou ,filho ,alcool ,cigarro ,escolaridade ,trabalho ,hobby  " +
+			sql ="select nome ,idade ,sexo ,uf ,p.email ,quem_sou ,filho ,alcool ,cigarro ,escolaridade ,trabalho ,hobby  " +
 			" from pessoa p " +
-			" inner join outrasinformacoes i on i.email = p.email";
+			" left join outrasinformacoes i on i.email = p.email" +
+			" where 1=1";
 
 			if(pessoa.getSexo() != ""){
-				sql += " where sexo =" +pessoa.getSexo();
+				sql += " and sexo ='" +pessoa.getSexo()+"'";
 			}
 			if(pessoa.getOndemora() != ""){
-				sql +=" and uf ="+pessoa.getOndemora();
+				sql +=" and uf ='"+pessoa.getOndemora()+"'";
 			}
 			if(pessoa.getIdade() != ""){
-				sql += "and idade between "+pessoa.getIdade1()+" and "+pessoa.getIdade2();
+
+				sql += " and idade > "+pessoa.getIdade1();
+				if(pessoa.getIdade2() > 0)
+					sql +=" and idade < "+pessoa.getIdade2();
 			}
 
 			// Create statement objects.

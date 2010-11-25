@@ -97,7 +97,7 @@ public class CadastroOutrasInformacoes extends JFrame implements ActionListener 
 		
 		if(e.getSource( )== voltar){
 			setVisible(false);
-			new Perfil();
+			new Perfil(info.getPessoa());
 		}else if(e.getSource() == salvar){
 			int g = JOptionPane.showConfirmDialog(null, "<html>Salvar dados?</html>","CADASTRO", 2);
 			if(g == 0){
@@ -114,13 +114,13 @@ public class CadastroOutrasInformacoes extends JFrame implements ActionListener 
 					infoBD = new PessoaBD();
 					infoBD.continuar(info);
 					JOptionPane.showMessageDialog(null, "salvo com sucesso", "SALVAR", JOptionPane.INFORMATION_MESSAGE);
+					
 				} catch (Exception e1) {
-
 					JOptionPane.showMessageDialog(null, "Erro ao salvar", "ERRO", JOptionPane.ERROR_MESSAGE);
 					e1.printStackTrace();
 				}
 				setVisible(false);
-				new Perfil();
+				new Perfil(info.getPessoa());
 			}
 
 		}

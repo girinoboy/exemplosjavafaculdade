@@ -150,13 +150,14 @@ public class CadastroPessoa extends JFrame implements ActionListener {
 					//inclui no banco de dados in mode standalone
 					pessoaBD.incluir(pessoa);
 					JOptionPane.showMessageDialog(null, "salvo com sucesso", "sucesso", JOptionPane.INFORMATION_MESSAGE);
+					setVisible(false);
+					new Agencia();
 				} catch (Exception e1) {
 					
-					JOptionPane.showMessageDialog(null, "Erro ao salvar", "erro", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "O email já está sendo usado. Informe outro!", "erro", JOptionPane.ERROR_MESSAGE);
 					e1.printStackTrace();
 				}
-				setVisible(false);
-				new Agencia();
+				
 			}
 		}
 

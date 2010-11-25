@@ -113,7 +113,7 @@ public class Agencia extends JFrame implements ActionListener {
 		add(bt2);
 
 		
-		img = new JLabel(new ImageIcon("C:/Users/Isis/Desktop/Imagemlogo.jpeg"));
+		img = new JLabel(new ImageIcon("D:/Documents and Settings/Rafael/Desktop/Imagemlogo.jpeg"));
 		img.setBounds(300, 300, 800, 250);
 		add(img);
 
