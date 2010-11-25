@@ -33,6 +33,38 @@ public class Pessoa  {
 			idade1 = 18L;
 			idade2 = 22L;
 		}
+		if(idade == "23-27"){
+			idade1 = 23L;
+			idade2 = 27L;
+		}
+		if(idade == "28-32"){
+			idade1 = 28L;
+			idade2 = 32L;
+		}
+		if(idade == "33-37"){
+			idade1 = 33L;
+			idade2 = 37L;
+		}
+		if(idade == "38-42"){
+			idade1 = 38L;
+			idade2 = 42L;
+		}
+		if(idade == "43-47"){
+			idade1 = 43L;
+			idade2 = 47L;
+		}
+		if(idade == "48-52"){
+			idade1 = 48L;
+			idade2 = 52L;
+		}
+		if(idade == "53-57"){
+			idade1 = 53L;
+			idade2 = 57L;
+		}
+		if(idade == "Maior de 58"){
+			idade1 = 58L;
+			idade2 = 0L;
+		}
 		return idade;
 	}
 	public void setIdade(String idade) {

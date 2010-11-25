@@ -39,7 +39,7 @@ public class CadastroPessoaProcurada extends JFrame implements ActionListener{
 		setVisible(true);
 	}
 
-	
+
 	private void inicializar(){
 		setSize(800, 600);
 		setTitle("Love Hunter - Procurar pessoa");
@@ -85,7 +85,7 @@ public class CadastroPessoaProcurada extends JFrame implements ActionListener{
 		myScrollPane = new JScrollPane();
 		add(myScrollPane);
 		/*add(new JTable());
-		
+
 		Connection con = null;
 		Statement stmt = null;
 
@@ -96,7 +96,7 @@ public class CadastroPessoaProcurada extends JFrame implements ActionListener{
 			con = Conexao.getConnection();
 			// Create statement objects.
 			stmt = con.createStatement(); 
-			
+
 			myScrollPane = new JScrollPane();
 			myTable = table.createTable(stmt.executeQuery("select * from CadastroOutrasInformacoes"));
 			myScrollPane.setViewportView(myTable);
@@ -112,7 +112,7 @@ public class CadastroPessoaProcurada extends JFrame implements ActionListener{
 			myScrollPane.setVisible(false);
 			//setContentPane(myScrollPane);
 			repaint();
-			
+
 			//createTable(stmt.executeQuery("SELECT * FROM pessoa"));
 			stmt.close();
 			con.close();
@@ -124,21 +124,23 @@ public class CadastroPessoaProcurada extends JFrame implements ActionListener{
 
 	public void actionPerformed(ActionEvent a) {
 
+		Pessoa pessoa = new Pessoa();
+
+		pessoa.setSexo(sexo.getSelectedItem().toString());
+		pessoa.setOndemora(ondemora.getSelectedItem().toString());
+		pessoa.setIdade(idade.getSelectedItem().toString());
+
 		if(a.getSource()== voltar){
 			setVisible(false);
-			new Perfil(); 
+			new Perfil(pessoa); 
 		}else if(a.getSource()== procurar){
 			try {
 				table = new ResultSetTable();
-				Pessoa pessoa = new Pessoa();
-				
-				pessoa.setSexo(sexo.getSelectedItem().toString());
-				pessoa.setOndemora(ondemora.getSelectedItem().toString());
-				pessoa.setIdade(idade.getSelectedItem().toString());
-				
+
+
 				myScrollPane.setVisible(false);
 				myScrollPane = table.creatScrollPane(pessoa);
-				myScrollPane.setBounds(0, 500, 700, 400);
+				myScrollPane.setBounds(0, 500, 900, 400);
 				add(myScrollPane);
 				myScrollPane.setVisible(true);
 				//repaint();

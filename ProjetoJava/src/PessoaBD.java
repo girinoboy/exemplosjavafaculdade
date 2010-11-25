@@ -34,13 +34,11 @@ public class PessoaBD extends Conexao{
 			ps.execute();
 
 			conn.commit();
-
-		} catch (SQLException e) {
-			conn.rollback();
-			e.printStackTrace();
+		
 		} catch (Exception e) {
 			conn.rollback();
 			e.printStackTrace();
+			throw e;
 		}finally{
 			if(ps != null)
 				ps.close();
@@ -79,12 +77,11 @@ public class PessoaBD extends Conexao{
 
 			conn.commit();
 
-		} catch (SQLException e) {
-			conn.rollback();
-			e.printStackTrace();
+		
 		} catch (Exception e) {
 			conn.rollback();
 			e.printStackTrace();
+			throw e;
 		}finally{
 			if(ps != null)
 				ps.close();
@@ -122,12 +119,10 @@ public class PessoaBD extends Conexao{
 			}
 
 
-		} catch (SQLException e) {
-			conn.rollback();
-			e.printStackTrace();
 		} catch (Exception e) {
 			conn.rollback();
 			e.printStackTrace();
+			throw e;
 		}finally{
 			if(ps != null)
 				ps.close();
@@ -168,12 +163,11 @@ public class PessoaBD extends Conexao{
 
 			}
 
-		} catch (SQLException e) {
-			conn.rollback();
-			e.printStackTrace();
+		
 		} catch (Exception e) {
 			conn.rollback();
 			e.printStackTrace();
+			throw e;
 		}finally{
 			if(ps != null)
 				ps.close();
