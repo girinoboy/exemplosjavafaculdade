@@ -1,77 +1,44 @@
-
-
+import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Container;
 import java.awt.Font;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.Collection;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 
-
-public class Agencia extends JFrame implements ActionListener {
-
-	private Collection<Pessoa> pessoas= new ArrayList<Pessoa>();
-
-
-	//cadastrar
-	//consultar
-	//alterar
-
-
-	PessoaProcurada perfprocurado = new PessoaProcurada();
-	OutrasInformacoes outras = new OutrasInformacoes();
-	Pessoa cadperfil = new Pessoa();
-
-
-
-
+public class SplitPaneExp extends JFrame {
+    
 	JLabel img, texto, titulo, texto2;
 	JButton bt1, bt2, bt3;
-	JMenuBar bar;
-	JMenuItem mi3;
-
-
-	public Agencia() {
-		//super(new GridLayout(5,0));
-		inicializar();
-		
-		//setVisible(true);
-	}
 	
-
-
-
-	private void inicializar(){
-		setSize(800,600);
-		setTitle("Love Hunter");
-		setLayout(null);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setDefaultLookAndFeelDecorated(true);
-		//setLocationRelativeTo(null);
-
-		
-
-
-
-		titulo = new JLabel("Love Hunter");
+    public SplitPaneExp() {
+        
+        setTitle("Example of Split Pane");
+        setSize(150, 150);
+        /*
+        JPanel jsp1 = new JPanel();
+        JPanel jsp2 = new JPanel();
+        JLabel j1 = new JLabel("Area 1");
+        JLabel j2 = new JLabel("Area 2");
+        
+        jsp1.add(j1);
+        jsp2.add(j2);
+        
+        JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, 
+                true, jsp1, jsp2);
+        
+        splitPane.setOneTouchExpandable(true);
+        getContentPane().add(splitPane);*/
+        
+        titulo = new JLabel("Love Hunter");
 		titulo.setBounds(450,30 ,200 , 30);
 		titulo.setFont(new Font("Comic Sans MS", Font.BOLD + Font.ITALIC, 20));
 		titulo.setForeground(Color.red);
 		
-		//add(titulo);
+		
 		
 		texto = new JLabel("<html><br>" +" ' " + " Ainda que eu falasse as línguas dos homens e dos anjos, " +
 				"e não tivesse Amor, seria como o metal que soa ou como o sino que tine. " +
@@ -96,72 +63,63 @@ public class Agencia extends JFrame implements ActionListener {
 		texto.setBounds(60, 40 ,1020, 250);	
 		texto.setFont(new Font("Vijaya", Font.CENTER_BASELINE, 20));
 		texto.setForeground(Color.BLUE);
-		//add(texto);
-
-
-		bt1 = new JButton("Cadastro");
-		bt1.setBounds(30, 350, 200, 30);
-		bt1.addActionListener(this);
-		bt3 = new JButton("Login");
-		bt3.setBounds(30, 380, 200, 30);
-		bt3.addActionListener(this);
-		bt2 = new JButton("Sair");
-		bt2.setBounds(30, 410, 200, 30);
-		bt2.addActionListener(this);
-
-		//add(bt1);
-		//add(bt3);
-		//add(bt2);
-
 		
-		img = new JLabel(new ImageIcon("D:/Documents and Settings/Rafael/Desktop/Imagemlogo.jpeg"));
-		img.setBounds(300, 300, 800, 250);
-		//add(img);
-
-
 		texto2 = new JLabel("<html>Encontre a tampa da sua panela. O outro par da sua havaina. O ovo da sua marmita. A matade da sua laranja. <center>CADASTRE-SE AGORA!!!</center></html>");
 		texto2.setBounds(30, 450, 1250, 300);
 		texto2.setFont(new Font("Comic Sans MS", Font.CENTER_BASELINE, 18));
 		texto2.setForeground(Color.red);
-		//add(texto2);
 		
-		JPanel panelTitulo = new JPanel();
+		img = new JLabel(new ImageIcon("D:/Documents and Settings/Rafael/Desktop/Imagemlogo.jpeg"));
+		img.setBounds(300, 300, 800, 250);
+		
+		bt1 = new JButton("Cadastro");
+		bt1.setBounds(30, 350, 200, 30);
+		//bt1.addActionListener(this);
+		bt3 = new JButton("Login");
+		bt3.setBounds(30, 380, 200, 30);
+		//bt3.addActionListener(this);
+		bt2 = new JButton("Sair");
+		bt2.setBounds(30, 410, 200, 30);
+		//bt2.addActionListener(this);
+		
+        
+        JPanel panelTitulo = new JPanel();
         JPanel texto1 = new JPanel();
+        JPanel botoes = new JPanel();
+        JPanel image = new JPanel();
         
         panelTitulo.add(titulo);
         texto1.add(texto);
+        
+        botoes.add(bt1);
+       // botoes.setBounds(10, 500, 100, 50);
+        botoes.add(bt3);
+        botoes.add(bt2);
+        botoes.setLocation(200, 100);
+        image.add(img);
 		
-		 JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, 
+		 JSplitPane splitPanetop = new JSplitPane(JSplitPane.VERTICAL_SPLIT, 
 	                true, panelTitulo, texto1);
+		 
+		 JSplitPane splitPanecenter = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, 
+	                false, botoes, image);
+		
+		 JSplitPane splitPanedown = new JSplitPane(JSplitPane.VERTICAL_SPLIT, 
+	                false, splitPanecenter, texto2);
+		 
+		 JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, 
+	                false, splitPanetop, splitPanedown);
 	        
 	        splitPane.setOneTouchExpandable(true);
-	        getContentPane().add(splitPane);
-	       // this.setVisible(true);
-	        
-	}
-
-	public void actionPerformed(ActionEvent e) {
-		try{
-			if(e.getSource() == bt1){
-				setVisible(false);
-				new CadastroPessoa();
-			}else if(e.getSource() == bt2){
-				setVisible(false);
-				System.exit(0);
-			}else if(e.getSource() == bt3){
-				setVisible(false);
-				new Login();
-			}
-		}catch(Exception ex){
-			ex.printStackTrace();
-		}
-
-
-	}
-
+	        getContentPane().add(splitPane, BorderLayout.CENTER);
+        
+    }
+    public static void main(String[] args) {
+        
+        SplitPaneExp sp = new SplitPaneExp();
+        sp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        sp.setVisible(true);
+        sp.pack();
+        
+    }
 }
-
-
-/*int k = JOptionPane.showConfirmDialog(null, "<html>Testando consulta!<br>Fechar o programa?</html>","CONSULTA", 2);
-if(k == 0)
-System.exit(0);*/
