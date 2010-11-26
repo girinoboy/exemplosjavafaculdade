@@ -19,7 +19,7 @@ public class Conexao {
 	// driver do SGBD
 	private static final String DRIVER = "org.hsqldb.jdbcDriver";
 	//Url responsável por fazer a conexão.
-	private static final String URL= "jdbc:hsqldb:file:C:\\hsqldb-2.0.1-rc2\\hsqldb\\data\\projetoJava";//"jdbc:hsqldb:hsql://localhost:59999/sisreceita";
+	private static final String URL= "jdbc:hsqldb:file:C:\\hsqldb-2.0.1-rc2\\hsqldb-2.0.1-rc2\\hsqldb\\data\\ProjetoJava";//"jdbc:hsqldb:hsql://localhost:59999/sisreceita";
 	//usuario para conectar ao Banco de Dados
 	private static final String USER="SA";
 	//senha do usuario
