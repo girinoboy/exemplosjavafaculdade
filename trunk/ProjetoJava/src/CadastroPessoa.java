@@ -41,6 +41,10 @@ public class CadastroPessoa extends JFrame implements ActionListener {
 
 
 	private void montarTela(){
+		
+		Container tela = getContentPane();
+		tela.setBackground(Color.WHITE);
+		
 		setSize(800, 600);
 		setTitle("Love Hunter - Cadastro");
 		setLayout(null);

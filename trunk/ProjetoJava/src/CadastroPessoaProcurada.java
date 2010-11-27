@@ -13,6 +13,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+
+import java.awt.Color;
+import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Panel;
@@ -41,6 +44,10 @@ public class CadastroPessoaProcurada extends JFrame implements ActionListener{
 
 
 	private void inicializar(){
+		
+		Container tela = getContentPane();
+		tela.setBackground(Color.WHITE);
+		
 		setSize(800, 600);
 		setTitle("Love Hunter - Procurar pessoa");
 		setLayout(null);

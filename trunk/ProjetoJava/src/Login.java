@@ -1,5 +1,7 @@
 
 
+import java.awt.Color;
+import java.awt.Container;
 import java.awt.Font;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
@@ -22,6 +24,9 @@ public class Login extends JFrame implements ActionListener {
 	Pessoa pessoa;
 
 	public Login(){
+		
+		Container tela = getContentPane();
+		tela.setBackground(Color.WHITE);
 
 		setSize(800,600);
 		setTitle("Love Hunter - Login");

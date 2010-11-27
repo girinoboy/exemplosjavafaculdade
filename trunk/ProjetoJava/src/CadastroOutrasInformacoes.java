@@ -1,5 +1,7 @@
 
 
+import java.awt.Color;
+import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,6 +26,10 @@ public class CadastroOutrasInformacoes extends JFrame implements ActionListener 
 	OutrasInformacoes info;
 
 	public CadastroOutrasInformacoes(Pessoa pessoa){
+		
+		Container tela = getContentPane();
+		tela.setBackground(Color.WHITE);
+		
 		setSize(800, 600);
 		setTitle("Love Hunter - Cadastro Outras informacoes");
 		setLayout(null);
