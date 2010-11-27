@@ -38,7 +38,7 @@ public class Agencia extends JFrame implements ActionListener {
 
 
 
-	JLabel img, texto, titulo, texto2;
+	JLabel img, texto, titulo, texto2, cor;
 	JButton bt1, bt2, bt3;
 	JMenuBar bar;
 	JMenuItem mi3;
@@ -55,16 +55,17 @@ public class Agencia extends JFrame implements ActionListener {
 
 
 	private void inicializar(){
+		Container tela = getContentPane();
+		tela.setBackground(Color.WHITE);
+		
+	    setBackground(Color.white);
 		setSize(800,600);
 		setTitle("Love Hunter");
 		setLayout(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setDefaultLookAndFeelDecorated(true);
 		//setLocationRelativeTo(null);
-
-		
-
-
+	
 
 		titulo = new JLabel("Love Hunter");
 		titulo.setBounds(450,30 ,200 , 30);
